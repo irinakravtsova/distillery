@@ -1,0 +1,13 @@
+.header__contact {
+  display: flex;
+  gap: 20px;
+}
+.contact-active:hover {
+  /* width: 69px;
+  height: 72px; */
+  /* background-color: #FDC021; */
+  background-image: url(../../assets/Ellipse-active.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}

@@ -1,0 +1,29 @@
+.header {
+  margin: 30px 0 50px 0;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px 0 50px;
+  margin-bottom: 64px;
+
+
+ }
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;;
+}
+
+.site-title {
+
+  /* font-family: Montserrat; */
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 128.6%;
+  letter-spacing: 0.3px;
+  color: #231a02;
+}
+
+

@@ -1,0 +1,30 @@
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header__logo-link {
+  width: 100px;
+  height: 63px;
+}
+.logo {
+width: 100px;
+  object-fit: cover;
+}
+.logo__brend {
+  padding-left: 15px;
+}
+.logo__title {
+  /* font-family: Montserrat; */
+  font-size: 10px;
+  line-height: 12px; /* 150% */
+  letter-spacing: 0.64px;
+  color: #fde047;
+}
+/* .logo__img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+} */
+/*  */
