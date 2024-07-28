@@ -40,11 +40,7 @@ padding: 11px 0 200px 20px;
   border: 1px solid #000;
   resize: none;
  }
- .data {
-  display: flex;
-  gap: 20px;
-  align-items: center;
- }
+
 
 .btn {
   margin-top: 20px;
@@ -80,9 +76,7 @@ color: #f1cb63;
   }
 }
 @media (max-width: 541px) {
-  .data {  
-    gap: 88px;   
-   }
+
    .label {
     font-size: 20px;
     width: 50%;  

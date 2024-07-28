@@ -6,7 +6,7 @@ function CalcResultJuice(props) {
   return (
    
       <div className='calc__box'>
-      <h3 className=' label_total'>Загрузка бродильного чана при использовании отжатого фруктового (ягодного) сока:      
+      <h3 className=' label_total'>Вариант 2 - загрузка бродильного чана при использовании отжатого фруктового (ягодного) сока:      
       </h3>
        
         <div className='results'>

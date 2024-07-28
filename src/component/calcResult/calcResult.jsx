@@ -6,7 +6,7 @@ function CalcResult(props) {
    
       <div className='calc__box'>
       <h3 className='label_total'>
-        Загрузка бродильного чана при использовании измельченных фруктов (ягод):
+        Вариант 1 - загрузка бродильного чана при использовании измельченных фруктов (ягод):
       </h3>
        
         <div className='results'>
