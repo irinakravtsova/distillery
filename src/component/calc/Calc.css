@@ -17,11 +17,11 @@ line-height: normal;
   font-size: 26px;
   font-weight: 400;
 line-height: normal;
-
 }
 .p {
   font-size: 20px;
-  font-style: italic
+  font-style: italic;
+  text-align: center;
 }
 .calc {
 position: relative;
@@ -37,7 +37,6 @@ position: relative;
 .calc__inner {
   padding: 60px 98px 0 98px;
   display: flex;
-  /* gap: 100px; */
 }
 .calc__box {
   padding: 28px; 
@@ -85,4 +84,91 @@ position: relative;
   font-size: 18px;
   font-style: italic;
   line-height: 26px;
+}
+
+@media (max-width: 961px) {
+  .h1 {
+    font-size: 32px;
+  }
+  .h3 {
+    font-size:22px;
+    margin-bottom: 12px;
+  }
+  .h2 {
+    margin-bottom: 0px;
+    font-size: 24px;
+    font-weight: 600; 
+  }
+  .p {
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+  }
+  .calc__inner {
+    padding: 6px 0px 0 20px;  
+  }
+  .calc__box {
+    padding: 20px; 
+  }
+  .results {
+    margin-top: 16px;
+    gap: 16px;
+  }
+  .label_total {
+    font-size: 20px;
+  }
+  .label_result {
+    font-size: 20px;   
+  }
+  .bgimage {  
+    top: 210px; 
+  }  
+}
+@media (max-width: 541px) {
+  .h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .h3 {
+    font-size:17px;
+    margin-bottom: 8px;
+  }
+  .h2 {
+    margin-bottom: 0px;
+    font-size: 20px;
+
+  }
+  .p {
+    font-size: 16px;
+     text-align: left;
+  }
+  .calc__inner {
+    flex-direction: column;
+    padding: 6px 0px 0 20px;  
+  }
+  .calc__wrapper {
+   
+    width: 100%;
+    border-right: 2px solid ;
+  
+  }
+  .calc__box {
+    padding: 20px; 
+  }
+  .label {
+    font-size: 17px;
+  }
+  .results {
+    margin-top: 16px;
+    gap: 16px;
+  }
+  .label_total {
+    font-size: 20px;
+  }
+  .label_result {
+    font-size: 20px;   
+  }
+  .bgimage {  
+    top: 210px; 
+  }  
 }

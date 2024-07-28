@@ -1,18 +1,9 @@
 .advertising-box {
-
   margin-top: 68px;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px 0 50px;
-
-
 }
-
-
-
-/* height: 100%; */
-
-
 .box-wrapper {
   position: relative;
   overflow: hidden;
@@ -23,11 +14,8 @@
   align-items: center;
   border: 4px solid #5c460b;
   border-radius: 10px;
-  /* background-image: url(./../../assets/bgBox.jpg); */
   background-repeat: no-repeat;
  background-size: cover;
-
-
 }
 .box-wrapper::after {
   content: "";
@@ -42,13 +30,7 @@
   position: absolute;
   z-index: -1;   
 }
-/* .bgBox {
-  position: absolute;
-  opacity: 0.2;
-  height: 100%;
-  width: auto;
 
-} */
 .box-text {
   font-size: 22px;
 }
@@ -64,4 +46,22 @@
   font-size: 24px;
   font-weight: 600;
   text-align: center;
+}
+@media (max-width: 961px) {
+  .box-subtitle {   
+    font-size: 20px;
+  }
+  .box-wrapper {  
+    padding: 22px;  
+    gap: 12px;
+  }
+  .box-text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 541px) {
+  .advertising-box {
+ 
+    padding: 0 15px 0 50px;
+  }
 }

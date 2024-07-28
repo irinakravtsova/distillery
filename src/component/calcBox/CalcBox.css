@@ -40,6 +40,11 @@ padding: 11px 0 200px 20px;
   border: 1px solid #000;
   resize: none;
  }
+ .data {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+ }
 
 .btn {
   margin-top: 20px;
@@ -57,4 +62,29 @@ color: #f1cb63;
 .btn:disabled {
   cursor: default;
   opacity: 0.5;
+} 
+@media (max-width: 961px) {
+  .form__wrapper {
+    margin-top: 24px;
+    margin-bottom: 0px;
+    gap: 20px;
+  }
+  .btn {
+    margin-top: 16px;   
+  padding-top: 6px;
+  padding-bottom: 6px; 
+  }
+  .label {
+    font-size: 17px;
+    width: 50%;  
+  }
+}
+@media (max-width: 541px) {
+  .data {  
+    gap: 88px;   
+   }
+   .label {
+    font-size: 20px;
+    width: 50%;  
+  }
 }

@@ -29,8 +29,8 @@ function CalcResult(props) {
             </p>            
           </div>
           <div className='result'>
-           <p className='label_total'>Всего округленно
-              <span className='label_result'> {props.Q}  </span> л.         
+           <p className='label_total'>Всего 
+              <span className='label_result'> {props.Q}  </span> л. (округленное значение)        
             </p>            
           </div>
 

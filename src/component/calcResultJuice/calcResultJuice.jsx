@@ -26,8 +26,8 @@ function CalcResultJuice(props) {
             </p>            
           </div>
           <div className='result'>
-           <p className=' label_total'>Всего округленно
-              <span className='label_total'>  {props.QJ}   </span> л.
+           <p className=' label_total'>Всего 
+              <span className='label_total'>  {props.QJ}   </span> л. (округленное значение)  
             </p>            
           </div>
 
