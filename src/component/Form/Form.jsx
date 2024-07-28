@@ -9,38 +9,22 @@ import Button from '../button/button';
 
 
 
-function Form({
-                isClass, 
-              
-                onChange, 
-                isplaceholderInput,
-                isnameInputStrength,
-                isnameInputVolume,
-                isnameInputInitialSugar, 
-                onChangeStrength, 
-                isvalueStrenght,
-                isvalueVolum,
-                isvalueInitialSugar,             
-             
-                onClick,
-                istypeInput,
-               
-                isclassInput,
-                onChangeInitialSugar
-                }) {
+function Form(props) {
+
 
   return (
     <form action=""
-        className={isClass}>
+        className={props.isClass}>
           <div className='data'>
             <p className='label' htmlFor="">Объем готового к перегонке сусла</p>
             <Input 
-                istypeInput={istypeInput}
-                isnameInput={isnameInputStrength}
-                isclassInput= {isclassInput}
-                isplaceholderInput={isplaceholderInput}
-                isvalue={isvalueStrenght}
-                onChange={onChangeStrength}/>
+                istypeInput={props.istypeInput}
+                isnameInput={props.isnameInputStrength}
+                isclassInput= {props.isclassInput}
+                isplaceholderInput={props.isplaceholderInput}
+                isvolueVolum = {props.isvolueVolum}
+                onChange={props.onChangeStrength}
+                V={props.V}/>
               <i>литров</i>
             <div className='data-input'>
              
@@ -54,12 +38,12 @@ function Form({
           <div className='data'>
             <p className='label' htmlFor="">Желаемая крепость сусла</p>
             <Input 
-                istypeInput={istypeInput}
-                isnameInput={isnameInputVolume}
-                isclassInput= {isclassInput}
-                isplaceholderInput={isplaceholderInput}
-                isvalue={isvalueVolum}
-                onChange={onChange}/>
+                istypeInput={props.istypeInput}
+                isnameInput={props.isnameInputVolume}
+                isclassInput= {props.isclassInput}
+                isplaceholderInput={props.isplaceholderInput}
+                isvolueStrenght = {props.isvolueStrenght}
+                onChange={props.onChange}/>
               <i>% об.</i>
             <div className='data-input'>
               
@@ -73,12 +57,12 @@ function Form({
           <div className='data'>
             <p className='label '>Количество сахара во фруктовом (ягодном) сырье</p>
             <Input 
-                istypeInput={istypeInput}
-                isnameInput={isnameInputInitialSugar}
-                isclassInput= {isclassInput}
-                isplaceholderInput={isplaceholderInput}
-                isvalue={isvalueInitialSugar}
-                onChange={onChangeInitialSugar}/>
+                istypeInput={props.istypeInput}
+                isnameInput={props.isnameInputInitialSugar}
+                isclassInput= {props.isclassInput}
+                isplaceholderInput={props.isplaceholderInput}
+                isvolueInitialSugar = {props.isvolueInitialSugar}
+                onChange={props.onChangeInitialSugar}/>
               <i>%</i>
             <div className='data-input'>
               
@@ -89,18 +73,10 @@ function Form({
                 text='Введите корректное значение'/> */}
           </div>
 
-        
-         
-      
-
-     
-     
-     
-
       <Button 
                 text={'Посчитать'}
                 isClass={'btn'}
-                onClick={onClick} />
+                onClick={props.onClick} />
     
     </form> 
      

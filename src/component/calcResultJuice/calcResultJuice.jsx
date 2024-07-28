@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-function CalcResultJuice() {
+function CalcResultJuice(props) {
   return (
    
       <div className='calc__box'>
@@ -12,22 +12,22 @@ function CalcResultJuice() {
         <div className='results'>
           <div className='result'>
            <p className='label_result'>Количество сока:
-              <span className='label_result'>  5,8 </span> л.            
+              <span className='label_result'> {props.J} </span> л.            
             </p>            
           </div>
           <div className='result'>
            <p className='label_result'>Количество воды:
-              <span className='label_result'>  5,8 </span> л.           
+              <span className='label_result'> {props.WJ} </span> л.           
             </p>            
           </div>
           <div className='result'>
            <p className=' label_result'>Количество сахара:
-              <span className='label_result'>   </span> кг.           
+              <span className='label_result'>  {props.S}   </span> кг.           
             </p>            
           </div>
           <div className='result'>
-           <p className=' label_total'>Всего 
-              <span className='label_total'>   </span> л.
+           <p className=' label_total'>Всего округленно
+              <span className='label_total'>  {props.QJ}   </span> л.
             </p>            
           </div>
 

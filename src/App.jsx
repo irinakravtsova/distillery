@@ -6,21 +6,16 @@ import './App.css'
 
 
 import Header from './component/Header/Header'
-
-import Box from './component/AdvertisingBox/AdvertisingBox';
 import Calc from './component/calc/Calc';
 import AdvertisingBox from './component/AdvertisingBox/AdvertisingBox'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ 
   return (
     <>
     < Header />
     <Calc />
     < AdvertisingBox />
-
-
     </>
   )
 }

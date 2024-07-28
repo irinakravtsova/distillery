@@ -50,6 +50,17 @@ position: relative;
   border-right: 2px solid ;
 
 }
+.data {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  
+ }
+ 
+ .label {
+   font-size: 22px;
+ }
+ 
 .results {
   margin-top: 18px;
   display: flex;

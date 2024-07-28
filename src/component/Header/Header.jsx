@@ -15,7 +15,7 @@ function Header() {
         < LogoLink />
         
         <a 
-          href="https://t.me/Yuriy_Mikheev" 
+          href="https://t.me/IrinaKavtsova" 
           target="_blank">
             <img 
               className='contact-active'
@@ -29,10 +29,4 @@ function Header() {
       </div>
     
      </header>
-     
-     
-  );
   
-}
-
-export default Header

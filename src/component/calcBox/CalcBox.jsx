@@ -6,7 +6,7 @@ import Bgr from '../../assets/bg.png'
 
 
 
-function CalcBox() {
+function CalcBox(props) {
   return (
   
       <div className='calc__box'>
@@ -14,9 +14,11 @@ function CalcBox() {
         <Form 
             isClass= {'form__wrapper'}
             istypeInput={"number"}
-            isnameInputStrength={'wineStrength'}
-            isnameInputVolume={'volume'}
-            isnameInputInitialSugar={'initialSugar'}
+            isvolueInitialSugar = {props.isvolueInitialSugar}
+             isvolueVolum = {props.isvolueVolum}
+             isvolueStrenght = {props.isvolueStrenght}
+             onClick = {props.onclick}
+             
             isclassInput= {'input'}
             // isvalueStrenght= {K}
             // isvalueVolum= {V}

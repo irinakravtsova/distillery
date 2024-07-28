@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function CalcResult() {
+function CalcResult(props) {
   return (
    
       <div className='calc__box'>
@@ -13,24 +13,24 @@ function CalcResult() {
           <div className='result'>
            <p className='label_result'>
             Количество измельченного сырья:
-              <span className='label_result'>  5,8 </span> л.            
+              <span className='label_result'>  {props.F} </span> л.            
             </p>            
           </div>
           <div className='result'>
            <p className=' label_result'>
             Количество воды:
-              <span className='label_result'>  5,8 </span> л.           
+              <span className='label_result'>  {props.W}</span> л.           
             </p>            
           </div>
           <div className='result'>
            <p className=' label_result'>
             Количество сахара:
-              <span className='label_result'>   </span> кг.           
+              <span className='label_result'>  {props.S}   </span> кг.           
             </p>            
           </div>
           <div className='result'>
-           <p className='label_total'>Всего 
-              <span className='label_result'>   </span> л.         
+           <p className='label_total'>Всего округленно
+              <span className='label_result'> {props.Q}  </span> л.         
             </p>            
           </div>
 
