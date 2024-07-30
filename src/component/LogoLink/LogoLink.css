@@ -6,11 +6,12 @@
 }
 .header__logo-link {
   width: 100px;
-  height: 63px;
+  /* height: 63px; */
 }
 .logo {
 width: 100px;
   object-fit: cover;
+
 }
 .logo__brend {
   padding-left: 15px;

@@ -6,7 +6,7 @@ function CalcResultJuice(props) {
   return (
    
       <div className='calc__box'>
-      <h3 className=' label_total'>Вариант 2 - загрузка бродильного чана при использовании отжатого фруктового (ягодного) сока:      
+      <h3 className=' label_total'>Вариант 2 - при использовании отжатого фруктового (ягодного) сока:      
       </h3>
        
         <div className='results'>
@@ -26,7 +26,7 @@ function CalcResultJuice(props) {
             </p>            
           </div>
           <div className='result'>
-           <p className=' label_total'>Всего 
+           <p className=' label_total'>Всего загрузка
               <span className='label_total'>  {props.QJ}   </span> л. (округленное значение)  
             </p>            
           </div>

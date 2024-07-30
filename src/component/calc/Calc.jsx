@@ -24,7 +24,7 @@ function Calc(props) {
   const [S, setS] = useState(0);
   const [W, setW] = useState(0);
   const [F, setF] = useState(0);
-  const [Q, setQ] = useState();
+  const [Q, setQ] = useState(0);
 
   const [J, setJ] = useState(0);//количество сока
   const [QJ, setQJ] = useState(0);//всего на соке
@@ -70,9 +70,12 @@ function Calc(props) {
     <div className='container'>
       <div className="calc">
         <img className='bgimage' src={Bgr} alt="" />
+       
         <h1 className='h1'>Калькулятор загрузки компонентов фруктовой браги</h1>
+        <div className='calc-subtitle'>
         <h3 className='h3'>Калькулятор поможет рассчитать оптимальные пропорции сырья, воды и сахара при заданном объеме браги, желаемой крепости браги и сахаристости фруктов (ягод)</h3>
         <div className='p'>Подробно о том, как подготовить сырье, какие взять дрожжи, как определить сахаристость сырья читайте в моем авторском курсе "Фрутовый самогон. Вкусно, просто и недорого" и ТГ канале "Моя домашняя винокурня" </div>
+        </div>
         <div className='calc__inner'>
           <div className="calc__wrapper">
              <div className='calc__box'>
@@ -115,11 +118,14 @@ function Calc(props) {
                 <button className='btn'
                 onClick={hendleClick}
                 >Посчитать</button>
-                        </form>       
+                        </form>  
+            <div className='down'> 
+              <p className='result-txt'>Результат смотри ниже &#10549;</p> </div>     
       </div>
             < CalcNote />
           </div>
           <div className="calc__wrapper">
+          
               < CalcResult
                W = {W}
                S = {S}

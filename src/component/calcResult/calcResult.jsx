@@ -5,8 +5,9 @@ function CalcResult(props) {
   return (
    
       <div className='calc__box'>
+        <h2 className='h2 result-h2'>Получите результаты расчетов</h2>
       <h3 className='label_total'>
-        Вариант 1 - загрузка бродильного чана при использовании измельченных фруктов (ягод):
+        Вариант 1 - при использовании измельченных фруктов (ягод):
       </h3>
        
         <div className='results'>
@@ -29,7 +30,7 @@ function CalcResult(props) {
             </p>            
           </div>
           <div className='result'>
-           <p className='label_total'>Всего 
+           <p className='label_total'>Всего загрузка
               <span className='label_result'> {props.Q}  </span> л. (округленное значение)        
             </p>            
           </div>

@@ -21,9 +21,11 @@
   color: #231a02;
 }
 .tg-link {
-  display: flex;
-  min-width: 55px;
+  
+  min-width: 100px;  
   padding: 0 2px 0 2px;
+  display: flex;
+  justify-content: center;
 }
 .contact-active {
   width: 50px;
@@ -50,20 +52,20 @@
     height: 50px;
   }
   }
-  @media (max-width: 541px) {
+  @media (max-width: 700px) {
     .header {
       margin: 18px 0 0px 0;
     }
     .container {     
-      padding: 0 15px 0 15px;
+      padding: 0 10px 0 10px;
       margin-bottom: 0px;
      }
     .site-title {
-      font-size: 28px;  
+      font-size: 18px;  
     }
     .contact-active {
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
     }
   }
 
