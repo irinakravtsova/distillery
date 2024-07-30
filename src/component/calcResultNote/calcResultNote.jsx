@@ -12,7 +12,7 @@ function СalcResultNote(props) {
         <div className='result'>        
            <p className='result-node'> Для обоих вариантов 
            <span className='label_result'>  {props.WS}  </span> л.
-           воды из общего количества уходит изготовления инвертного сиропа, а               
+           воды из общего количества уходит на изготовления инвертного сиропа, а               
           остальное  -  на разбавление измельченных фруктов или сока           
             </p>            
          </div>
