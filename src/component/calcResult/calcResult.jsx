@@ -5,8 +5,8 @@ function CalcResult(props) {
   return (
    
       <div className='calc__box'>
-        <h2 className='h2 result-h2'>Получите результаты расчетов</h2>
-      <h3 className='label_total'>
+        <h2 className='h2 result-h2' id='result'>Получите результаты расчетов</h2>
+      <h3 className='label_total'> 
         Вариант 1 - при использовании измельченных фруктов (ягод):
       </h3>
        

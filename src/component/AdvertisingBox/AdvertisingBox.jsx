@@ -42,7 +42,7 @@ function AdvertisingBox() {
            <li className='box-title box-subtitle'>
            Почти 10-ти летний опыт и собираемая по крупицам информация, которую я опробовала, проанализовала, и подготовила для вас в очень удобном виде. 
            </li>
-           <li className='box-text subtext '> и в моем авторском курсе 
+           <li className='box-text subtext '> в моем авторском курсе 
            "Фруктовый самогон. Вкусно, просто и недорого" 
            </li>
        

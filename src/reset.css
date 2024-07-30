@@ -27,7 +27,7 @@ a:active {
 a {
   vertical-align: baseline;
   background: transparent;
-  text-decoration: none;
+  /* text-decoration: none; */
   color: inherit;
 }
 

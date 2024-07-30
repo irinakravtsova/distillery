@@ -114,13 +114,16 @@ function Calc(props) {
                   value= {initialSugar}
                   onChange={e => setInitialSugar(e.target.value)}/>
                   </div>
-              
+                  
                 <button className='btn'
                 onClick={hendleClick}
-                >Посчитать</button>
+                >Посчитать              
+                </button>
+               
                         </form>  
             <div className='down'> 
-              <p className='result-txt'>Результат смотри ниже &#10549;</p> </div>     
+              <a className='result-txt' href="#result">Результат смотри ниже &#10549;</a>
+              </div>     
       </div>
             < CalcNote />
           </div>

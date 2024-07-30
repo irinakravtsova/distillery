@@ -213,6 +213,12 @@ line-height: normal;
     font-size: 17px;
     font-weight: 600;
   }
+  .result-txt:active,
+  .result-txt
+  :hover {
+   color: #584920;
+
+  }
   .result-h2 {
     margin-bottom: 20px;
     margin-top: 6px;
