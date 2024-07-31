@@ -23,9 +23,12 @@ width: 100px;
   letter-spacing: 0.64px;
   color: #fde047;
 }
-/* .logo__img {
- width: 100%;
- height: 100%;
- object-fit: cover;
-} */
-/*  */
+@media (max-width: 700px) {
+  .header__logo-link {
+    width: 78px;
+  
+  }
+  .logo {
+    width: 50px;
+  }
+}

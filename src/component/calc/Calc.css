@@ -2,7 +2,7 @@
   margin-top: 24px;
   margin-bottom: 34px;
   text-align: center;
-  font-size: 46px;
+  font-size: 44px;
   font-weight: 700;
 line-height: normal;
 }
@@ -54,6 +54,7 @@ margin-bottom: 152px;
   border-right: 2px solid;
 }
 .data {
+  width: 100%;
   display: flex;
   gap: 20px;
   align-items: center;  
@@ -198,7 +199,7 @@ line-height: normal;
     top: 140px; 
   } 
   .data {
-    gap: 80px;
+ 
   }
   .result-node { 
     font-size: 14px;

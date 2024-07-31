@@ -2,14 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 import './Calc.css' 
 
-
 import Bgr from '../../assets/bg.png'
 import CalcBox from '../calcBox/CalcBox';
 import CalcNote from '../calcNote/calcNote';
 import CalcResult from '../calcResult/calcResult';
 import CalcResultJuice from '../calcResultJuice/calcResultJuice';
 import СalcResultNote from '../calcResultNote/calcResultNote'
-
 
 
 function Calc(props) {
@@ -31,9 +29,48 @@ function Calc(props) {
   const [WJ, setWJ] = useState(0);
 
   const [WS, setWS] = useState(0);
+
+  
+function formValidate() {
+  let error = 0;
+  if (!volume || !volume ) {
+    error++;
+    alert('объем готовой к перегонке браги не может быть равным 0 или меньше, введите любое положительное число' );
+  
+  } else
+  if (!strenght || !strenght && strenght >18 && strenght <6 ) {
+    error++;
+    alert('желаемая крепость браги зависит от применяемых дрожжей, посмотрите на пачке рекомендации производител и введите указанное в качестве спиртоустойчивости количество градусов. Это может быть число от 6 до 18' );
+  
+  } else
+  if (strenght >19 ) {
+    error++;
+    alert('вы уверены, что ваши дрожжи способны набродить такое количество спирта? обычно спиртоустойчивость дрожжей лежит в пределах от 12 до 18%. Уточните этот параметр у производителя');  
+  }
+  else
+  if (strenght <8 ) {
+    error++;
+    alert('вы уверены, что вам необъходимо такое слабое сусло? Скорее всего ваши дрожжи способны набродить и большее количество спирта. Уточните этот параметр у производителя (как правило, он лежит в пределах от 12 до 18%');  
+  }
+   else
+  if (initialSugar < 0  ) {
+    error++;
+    alert('количество сахара во фруктах не может быть отрицательным, введите значение от 0 до 20');
+  }else
+  if (initialSugar >20  ) {
+    error++;
+    alert(' у вас точно такое большое количество сахара во фруктах? обычно оно не превышает 20%, введите значение от 0 до 20');
+  }
+  return error;
+} 
   
   function hendleClick(e) {
-   e.preventDefault()
+   e.preventDefault();
+   let error = formValidate()
+   if (error !== 0) {
+     return     
+   }
+
    let a = K/0.6*10; //приводим крепость к сахару
    let s = ((((a/(1000-a))*1000 - C/2*10)/1000*V).toFixed(1));
    let b = V*1.03//сусло с осадком
@@ -71,7 +108,7 @@ function Calc(props) {
       <div className="calc">
         <img className='bgimage' src={Bgr} alt="" />
        
-        <h1 className='h1'>Калькулятор загрузки компонентов фруктовой браги</h1>
+        <h2 className='h1'>Калькулятор загрузки компонентов фруктовой браги</h2>
         <div className='calc-subtitle'>
         <h3 className='h3'>Калькулятор поможет рассчитать оптимальные пропорции сырья, воды и сахара при заданном объеме браги, желаемой крепости браги и сахаристости фруктов (ягод)</h3>
         <div className='p'>Подробно о том, как подготовить сырье, какие взять дрожжи, как определить сахаристость сырья читайте в моем авторском курсе "Фрутовый самогон. Вкусно, просто и недорого" и ТГ канале "Моя домашняя винокурня" </div>
@@ -85,14 +122,14 @@ function Calc(props) {
                >
                  <div className='data'>
                   <p className='label'>
-                  Объем готовой к перегонке браги</p>
+                  Объем готовой к перегонке браги</p> 
                   <input
                   value= {volume}
                   className='input' 
                   type="number"
                   placeholder='0'
                   onChange={e => setVolume(e.target.value)}
-                  />
+                  /> л.
                   </div>
                 
                   <div className='data'>
@@ -102,7 +139,7 @@ function Calc(props) {
                   type="number" 
                   placeholder='0'
                   value= {strenght}
-                  onChange={e => setStrenght(e.target.value)}/>
+                  onChange={e => setStrenght(e.target.value)}/> %
                   </div>
                   <div className='data'>
                    <p className='label'>
@@ -112,7 +149,7 @@ function Calc(props) {
                   type="number" 
                   placeholder='0'
                   value= {initialSugar}
-                  onChange={e => setInitialSugar(e.target.value)}/>
+                  onChange={e => setInitialSugar(e.target.value)}/> %
                   </div>
                   
                 <button className='btn'
