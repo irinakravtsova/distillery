@@ -16,7 +16,7 @@ function Header() {
         < LogoLink />
         <div className='tg-link'>
         <a 
-          href="https://t.me/IrinaKavtsova" 
+          href="https://t.me/distillery_Irina" 
           target="_blank">
            
             <img 

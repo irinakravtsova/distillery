@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import './Calc.css' 
+import './calcFruits.css' 
 
 import Bgr from '../../assets/bg.png'
 import CalcBox from '../calcBox/CalcBox';
@@ -8,34 +8,34 @@ import CalcNote from '../calcNote/calcNote';
 import CalcResult from '../calcResult/calcResult';
 import CalcResultJuice from '../calcResultJuice/calcResultJuice';
 import СalcResultNote from '../calcResultNote/calcResultNote'
+import CalcResultFruits from '../calcResultFruits/calcResultFruits';
 
 
-function Calc(props) {
+function CalcFruits(props) {
   const [initialSugar, setInitialSugar] = useState('');
-  const [volume, setVolume] = useState('');
+  const [volumeFruits, setVolumeFruits] = useState('');
   const [strenght, setStrenght] = useState('');
  
   const C = Number(initialSugar);
-  const V = Number(volume);
-  const K = Number(strenght);
+  const Vf = Number(volumeFruits);
+  const K = Number(strenght);  
  
   const [S, setS] = useState(0);
   const [W, setW] = useState(0);
-  const [F, setF] = useState(0);
+  const [Ws, setWS] = useState(0);//вода на сахар
   const [Q, setQ] = useState(0);
 
-  const [J, setJ] = useState(0);//количество сока
   const [QJ, setQJ] = useState(0);//всего на соке
   const [WJ, setWJ] = useState(0);
 
-  const [WS, setWS] = useState(0);
+  // const [WS, setWS] = useState(0);
 
   
 function formValidate() {
   let error = 0;
-  if (!volume || !volume ) {
+  if (!volumeFruits || !volumeFruits ) {
     error++;
-    alert('объем готовой к перегонке браги не может быть равным 0 или меньше, введите любое положительное число' );
+    alert('объем измельченных фруктов или сока не может быть равным 0 или меньше, введите любое положительное число' );
   
   } else
   if (!strenght || !strenght && strenght >18 && strenght <6 ) {
@@ -57,7 +57,7 @@ function formValidate() {
     error++;
     alert('количество сахара во фруктах не может быть отрицательным, введите значение от 0 до 20');
   }else
-  if (initialSugar >20  ) {
+  if (initialSugar >30  ) {
     error++;
     alert(' у вас точно такое большое количество сахара во фруктах? обычно оно не превышает 20%, введите значение от 0 до 20');
   }
@@ -71,10 +71,28 @@ function formValidate() {
      return     
    }
 
-   let a = K/0.6*10; //приводим крепость к сахару
-   let s = ((((a/(1000-a))*1000 - C/2*10)/1000*V).toFixed(1));
-   let b = V*1.03//сусло с осадком
-   let d = b-s*1.4//сусло с осадком без учета сахара
+   let a = (K/0.6*10).toFixed(1); //приводим крепость к сахару
+   
+   let b = (Vf*0.3).toFixed(1)//мезга
+  
+   let wc = Vf //вода на сок
+ 
+   let d = Vf-b //сок без мезги
+  
+   let V = wc+d //вода+сок
+   let s = ((((a/(1000-a))*1000 - C/2*10)/1000*V).toFixed(1)); //сахара на весь объем
+   let ws = (s*0.4)// вода на сироп
+   let wt = (wc+ws) //всего вода
+   let t = (Vf+wt+s*1).toFixed(1) //всего на фруктах
+
+   const wj = Vf+s*0.4
+   const qj = (Vf*2 + s*1.4)
+
+   
+   console.log(qj);
+
+
+   
    let j = d/2 //фрукты без учета мезги
    let h = j*1.3 //фрукты с мезгой
    let q = (j+h)/2;   
@@ -82,24 +100,23 @@ function formValidate() {
   
    let g = q+(s*0.4);   
    let w = g.toFixed(1)
-   let t = (g+q+s*1).toFixed(1) //всего на фруктах
+  //  let t = (g+q+s*1).toFixed(1) //всего на фруктах
    
-   let jj = j.toFixed(1);  
-   let wj = (jj*1 + s*0.4).toFixed(1);
+ 
    let tj = (j*1 + wj*1 + s*1).toFixed(1);
 
-   let ws = (s*0.4).toFixed(1)
+   
 
    setS (s);  
-   setF (f);
-   setW (w);
+   setWS(ws)
+   setW (wt);
    setQ(t);
 
-   setJ(jj);
+ 
    setQJ(tj);
    setWJ(wj);
    
-   setWS(ws)
+   
   }
  
   return (
@@ -107,11 +124,20 @@ function formValidate() {
     <div className='container'>
       <div className="calc">
         <img className='bgimage' src={Bgr} alt="" />
+        <div className='note'>
+        <h2 className='note__text '>Вы найдете здесь два калькулятора и в зависимости от того, по какому параметру вы будете считать, воспользуйтесь первым или вторым. </h2>
+        <h2 className='note__text'> Если вы набрали ведро или два фруктов и отжали сок или измельчили и хотите использовать весь объём, тогда воспользуйтесь калькулятором по объему измельченных фруктов или сока</h2>
+        <h2 className='note__text'>а если вы пранируете делать только одну партию дистиллята, то вам удобнее будет расчитать загрузку по объёму вашего самогонного аппарата и тогда воспользуйтесь вторым калькулятором по объему готового к перегонке сусла </h2>
+
+        </div>
        
-        <h2 className='h1'>Калькулятор загрузки компонентов фруктовой браги по объёму готовой к перегонке браги</h2>
+        <h2 className='h1'>Калькулятор загрузки компонентов фруктовой браги по объему измельченных фруктов или сока </h2>
         <div className='calc-subtitle'>
-        <h3 className='h3'>  Если вы пранируете делать только одну партию дистиллята, то вам удобнее будет расчитать загрузку по объёму вашего самогонного аппарата. </h3>
-       
+        <h3 className='h3'>Калькулятор поможет рассчитать сколько нужно добавить воды и сахара при заданном количестве измельченных фруктов или сока, желаемой крепости браги и сахаристости фруктов</h3>
+        <p className='label_result text__node'> желаемая крепость браги зависит от спиртоустойчивости дрожжей;  <br></br> количество сахара в фруктах измеряется с помощью приборов или берется по таблицам;
+        </p>
+      
+        </div>
         <div className='calc__inner'>
           <div className="calc__wrapper">
              <div className='calc__box'>
@@ -121,18 +147,19 @@ function formValidate() {
                >
                  <div className='data'>
                   <p className='label'>
-                  Объем готовой к перегонке браги</p> 
+                  Объем измельченных фруков/сока</p> 
                   <input
-                  value= {volume}
+                  value= {volumeFruits}
                   className='input' 
                   type="number"
                   placeholder='0'
-                  onChange={e => setVolume(e.target.value)}
+                  onChange={e => setVolumeFruits(e.target.value)}
                   /> л.
                   </div>
+                  
                 
-                  <div className='data'>
-                <p className='label' >Желаемая крепость браги </p>
+                <div className='data'>
+                 <p className='label' >Желаемая крепость браги </p>
                   <input 
                   className='input' 
                   type="number" 
@@ -161,26 +188,26 @@ function formValidate() {
               <a className='result-txt' href="#result">Результат смотри ниже &#10549;</a>
               </div>     
       </div>
-            < CalcNote />
+            {/* < CalcNote /> */}
           </div>
           <div className="calc__wrapper">
           
-              < CalcResult
+              < CalcResultFruits
                W = {W}
                S = {S}
-               F = {F}
+               Ws = {Ws}
                Q = {Q}
+               WJ = {WJ}              
+               QJ = {QJ}
                 />
-              < CalcResultJuice
+              {/* < CalcResultJuice
               WJ = {WJ}
               J =  {J}
               QJ = {QJ}
               S = {S}
-               />
-              < СalcResultNote
-              WS = {WS} />
-               <div className='p'>Подробно о том, как подготовить сырье, какие взять дрожжи, как определить сахаристость сырья читайте в моем авторском курсе "Фрутовый самогон. Вкусно, просто и недорого" и ТГ канале "Моя домашняя винокурня" </div>
-               </div>
+               /> */}
+              {/* < СalcResultNote
+              WS = {WS} /> */}
           </div>   
         </div>
        </div>
@@ -189,4 +216,4 @@ function formValidate() {
   );
 }
 
-export default Calc;
+export default CalcFruits;

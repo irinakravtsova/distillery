@@ -8,13 +8,16 @@ import './App.css'
 import Header from './component/Header/Header'
 import Calc from './component/calc/Calc';
 import AdvertisingBox from './component/AdvertisingBox/AdvertisingBox'
+import CalcFruits from './component/calcFruits/calcFruits';
 
 function App() {
  
   return (
     <>
     < Header />
+    <CalcFruits />
     <Calc />
+   
     < AdvertisingBox />
     </>
   )
