@@ -16,7 +16,7 @@ function Header() {
         < LogoLink />
         <div className='tg-link'>
         <a 
-          href="https://t.me/distillery_Irina" 
+          href="https://t.me/course_distillery_bot" 
           target="_blank">
            
             <img 
@@ -24,11 +24,6 @@ function Header() {
               src={Tg} alt="telegram"/>
         </a>
         </div>
-        
-   
-
-
-
         </div>
       
       </div>

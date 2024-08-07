@@ -27,7 +27,7 @@ function CalcResultJuice(props) {
           </div>
           <div className='result'>
            <p className=' label_total'>Всего загрузка
-              <span className='label_total'>  {props.QJ}   </span> л. (округленное значение)  
+              <span className='label_total'>  {props.QJ}   </span> л. 
             </p>            
           </div>
 

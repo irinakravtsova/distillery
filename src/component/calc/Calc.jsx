@@ -29,6 +29,7 @@ function Calc(props) {
   const [WJ, setWJ] = useState(0);
 
   const [WS, setWS] = useState(0);
+  const [As, setAs] = useState(0);
 
   
 function formValidate() {
@@ -71,24 +72,32 @@ function formValidate() {
      return     
    }
 
-   let a = K/0.6*10; //приводим крепость к сахару
-   let s = ((((a/(1000-a))*1000 - C/2*10)/1000*V).toFixed(1));
+   let a = (K/0.6*10); //приводим крепость к сахару  
+   let ss = ((((a/(1000-a))*1000 - C/2*10)/1000*V));
    let b = V*1.03//сусло с осадком
-   let d = b-s*1.4//сусло с осадком без учета сахара
+   let d = b-ss*1.4//сусло с осадком без учета сахара
    let j = d/2 //фрукты без учета мезги
    let h = j*1.3 //фрукты с мезгой
    let q = (j+h)/2;   
-   let f = q.toFixed(1);
+   let f = q.toFixed(2);
   
-   let g = q+(s*0.4);   
-   let w = g.toFixed(1)
-   let t = (g+q+s*1).toFixed(1) //всего на фруктах
+   let g = q+(ss*0.4);   
+   let w = g.toFixed(2)
+   let t = (g+q+ss*1).toFixed(2) //всего на фруктах
    
-   let jj = j.toFixed(1);  
-   let wj = (jj*1 + s*0.4).toFixed(1);
-   let tj = (j*1 + wj*1 + s*1).toFixed(1);
+   let jj = j.toFixed(2);  
+   let wj = (jj*1 + ss*0.4).toFixed(2);
+   let tj = (j*1 + wj*1 + ss*1).toFixed(2);
 
-   let ws = (s*0.4).toFixed(1)
+   let ws = (ss*0.4).toFixed(2)
+   let s = ss.toFixed(2)
+
+  
+   //из каши
+   let As =(((V*K/100)-(V*K/100)*0.1)*100/40).toFixed(1); 
+
+   console.log(As);
+
 
    setS (s);  
    setF (f);
@@ -99,18 +108,20 @@ function formValidate() {
    setQJ(tj);
    setWJ(wj);
    
-   setWS(ws)
+   setWS(ws);
+    setAs(As);
   }
  
   return (
     <>
     <div className='container'>
       <div className="calc">
-        <img className='bgimage' src={Bgr} alt="" />
+        <img className='bgimage2' src={Bgr} alt="" />
        
-        <h2 className='h1'>Калькулятор загрузки компонентов фруктовой браги по объёму готовой к перегонке браги</h2>
+        <h2 className='h1'
+            id='calc2'>Калькулятор №2 <br></br> загрузки компонентов фруктовой браги по объёму готовой к перегонке браги</h2>
         <div className='calc-subtitle'>
-        <h3 className='h3'>  Если вы пранируете делать только одну партию дистиллята, то вам удобнее будет расчитать загрузку по объёму вашего самогонного аппарата. </h3>
+        <h3 className='note__text'>  Если вы пранируете делать только одну партию дистиллята, то вам удобнее будет расчитать загрузку по объёму вашего самогонного аппарата. </h3>
        
         <div className='calc__inner'>
           <div className="calc__wrapper">
@@ -158,10 +169,10 @@ function formValidate() {
                
                         </form>  
             <div className='down'> 
-              <a className='result-txt' href="#result">Результат смотри ниже &#10549;</a>
+              <a className='result-txt' href="#result2">Результат смотри ниже &#10549;</a>
               </div>     
       </div>
-            < CalcNote />
+            {/* < CalcNote /> */}
           </div>
           <div className="calc__wrapper">
           
@@ -178,8 +189,9 @@ function formValidate() {
               S = {S}
                />
               < СalcResultNote
-              WS = {WS} />
-               <div className='p'>Подробно о том, как подготовить сырье, какие взять дрожжи, как определить сахаристость сырья читайте в моем авторском курсе "Фрутовый самогон. Вкусно, просто и недорого" и ТГ канале "Моя домашняя винокурня" </div>
+              WS = {WS}
+              As = {As} />
+               {/* <div className='p'>Подробно о том, как подготовить сырье, какие взять дрожжи, как определить сахаристость сырья читайте в моем авторском курсе "Фрутовый самогон. Вкусно, просто и недорого" и ТГ канале "Моя домашняя винокурня" </div> */}
                </div>
           </div>   
         </div>

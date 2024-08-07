@@ -5,7 +5,7 @@ function CalcResult(props) {
   return (
    
       <div className='calc__box'>
-        <h2 className='h2 result-h2' id='result'>Получите результаты расчетов</h2>
+        <h2 className='h2 result-h2' id='result2'>Получите результаты расчетов</h2>
       <h3 className='label_total'> 
         Вариант 1 - при использовании измельченных фруктов (ягод):
       </h3>
@@ -31,7 +31,7 @@ function CalcResult(props) {
           </div>
           <div className='result'>
            <p className='label_total'>Всего загрузка
-              <span className='label_result'> {props.Q}  </span> л. (округленное значение)        
+              <span className='label_result'> {props.Q}  </span> л.      
             </p>            
           </div>
 

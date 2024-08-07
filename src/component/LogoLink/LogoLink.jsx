@@ -7,7 +7,9 @@ function LogoLink() {
   return (
     <>
        <div className='header__logo'>
-        <a className="header__logo-link" href="#">
+        <a className="header__logo-link" 
+            href="https://t.me/distillery_Irina"
+            target='_blank'>            
           <img className="logo" src={Logo} alt="logo_IrinaKavtsova" />              
         </a>      
        </div> 

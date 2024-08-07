@@ -24,9 +24,13 @@ function CalcFruits(props) {
   const [W, setW] = useState(0);
   const [Ws, setWS] = useState(0);//вода на сахар
   const [Q, setQ] = useState(0);
+  const [Bm, setBm] = useState(0);
+  const [As, setAs] = useState(0);
 
   const [QJ, setQJ] = useState(0);//всего на соке
   const [WJ, setWJ] = useState(0);
+  const [B, setB] = useState(0);
+  const [AsJ, setAsJ] = useState(0);
 
   // const [WS, setWS] = useState(0);
 
@@ -71,50 +75,41 @@ function formValidate() {
      return     
    }
 
-   let a = (K/0.6*10).toFixed(1); //приводим крепость к сахару
-   
-   let b = (Vf*0.3).toFixed(1)//мезга
-  
-   let wc = Vf //вода на сок
- 
-   let d = Vf-b //сок без мезги
-  
+   let a = (K/0.6*10).toFixed(1); //приводим крепость к сахару   
+   let b = (Vf*0.3).toFixed(1)//мезга  
+   let wc = Vf //вода на сок 
+   let d = Vf-b //сок без мезги  
    let V = wc+d //вода+сок
    let s = ((((a/(1000-a))*1000 - C/2*10)/1000*V).toFixed(1)); //сахара на весь объем
    let ws = (s*0.4)// вода на сироп
    let wt = (wc+ws) //всего вода
    let t = (Vf+wt+s*1).toFixed(1) //всего на фруктах
-
-   const wj = Vf+s*0.4
-   const qj = (Vf*2 + s*1.4)
-
-   
-   console.log(qj);
-
-
-   
-   let j = d/2 //фрукты без учета мезги
-   let h = j*1.3 //фрукты с мезгой
-   let q = (j+h)/2;   
-   let f = q.toFixed(1);
+   let bragaPulp =(V+ws+s*1)-(V+ws+s*1)*0.03;
+   let bm = bragaPulp.toFixed(1)
   
-   let g = q+(s*0.4);   
-   let w = g.toFixed(1)
-  //  let t = (g+q+s*1).toFixed(1) //всего на фруктах
+   const wj = Vf+s*0.4
    
- 
-   let tj = (j*1 + wj*1 + s*1).toFixed(1);
-
+   let braga = (Vf*2+s*1.4)-(Vf*2+s*1.4)*0.03;
+   let bc = braga.toFixed(1)
+  
+    //расчет дистиллята
+   //из сока
+   let AsJ = (((bc*K/100)-(bc*K/100)*0.1)*100/40).toFixed(1); 
+   //из каши
+   let As =(((bm*K/100)-(bm*K/100)*0.1)*100/40).toFixed(1); 
+  
+   console.log(As, AsJ);
    
-
    setS (s);  
    setWS(ws)
    setW (wt);
    setQ(t);
-
- 
-   setQJ(tj);
+   setBm(bm);
+   setAs(As);
+   
    setWJ(wj);
+   setB(bc);
+   setAsJ(AsJ);
    
    
   }
@@ -125,17 +120,21 @@ function formValidate() {
       <div className="calc">
         <img className='bgimage' src={Bgr} alt="" />
         <div className='note'>
-        <h2 className='note__text '>Вы найдете здесь два калькулятора и в зависимости от того, по какому параметру вы будете считать, воспользуйтесь первым или вторым. </h2>
-        <h2 className='note__text'> Если вы набрали ведро или два фруктов и отжали сок или измельчили и хотите использовать весь объём, тогда воспользуйтесь калькулятором по объему измельченных фруктов или сока</h2>
-        <h2 className='note__text'>а если вы пранируете делать только одну партию дистиллята, то вам удобнее будет расчитать загрузку по объёму вашего самогонного аппарата и тогда воспользуйтесь вторым калькулятором по объему готового к перегонке сусла </h2>
+       
+        <h2 className='note__text'> -  eсли у вас есть определенный объем измельченных фруктов или сока и вы предполагаете полностью использовать их на приготовление дистиллята, тогда воспользуйтесь
+          <a className='link-calc' href="#calc"> Калькулятором №1;</a> </h2>
+        <h2 className='note__text'> - eсли вы хотите рассчитать, какое количество вруктов вам необходимо для получения определенного объема готовой к перегонке браги (например по объему вашего самогонного аппарата), то воспользуйтесь 
+          <a className='link-calc' href="#calc2">  Калькулятором №2</a></h2>
+        <p className='note__text'> -  желаемая крепость браги зависит от спиртоустойчивости дрожжей;  <br></br> - количество сахара в фруктах измеряется с помощью приборов или берется по таблицам;
+        </p>
+       
 
         </div>
        
-        <h2 className='h1'>Калькулятор загрузки компонентов фруктовой браги по объему измельченных фруктов или сока </h2>
+        <h2 className='h1'
+            id='calc'>Калькулятор №1<br></br>(загрузка компонентов фруктовой браги по объему измельченных фруктов или сока) </h2>
         <div className='calc-subtitle'>
-        <h3 className='h3'>Калькулятор поможет рассчитать сколько нужно добавить воды и сахара при заданном количестве измельченных фруктов или сока, желаемой крепости браги и сахаристости фруктов</h3>
-        <p className='label_result text__node'> желаемая крепость браги зависит от спиртоустойчивости дрожжей;  <br></br> количество сахара в фруктах измеряется с помощью приборов или берется по таблицам;
-        </p>
+        <h3 className='note__text'>Калькулятор поможет рассчитать сколько нужно добавить воды и сахара при заданном количестве измельченных фруктов или сока, желаемой крепости браги и сахаристости фруктов</h3>
       
         </div>
         <div className='calc__inner'>
@@ -198,7 +197,11 @@ function formValidate() {
                Ws = {Ws}
                Q = {Q}
                WJ = {WJ}              
-               QJ = {QJ}
+             
+               Bm = {Bm}
+               B = {B}
+               As = {As}
+               AsJ = {AsJ}
                 />
               {/* < CalcResultJuice
               WJ = {WJ}
