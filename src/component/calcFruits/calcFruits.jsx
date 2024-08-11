@@ -32,6 +32,12 @@ function CalcFruits(props) {
   const [B, setB] = useState(0);
   const [AsJ, setAsJ] = useState(0);
 
+  const [IS, setIS] = useState(0);
+  const [ISt, setIst] = useState(0);//сироп 1/3 всего
+  const [ISts, setISts] = useState(0);//сахар 1/3
+ const [IStw, setIStw] = useState(0);//вода 1/3
+
+
   // const [WS, setWS] = useState(0);
 
   
@@ -81,11 +87,15 @@ function formValidate() {
    let d = Vf-b //сок без мезги  
    let V = wc+d //вода+сок
    let s = ((((a/(1000-a))*1000 - C/2*10)/1000*V).toFixed(1)); //сахара на весь объем
-   let ws = (s*0.4)// вода на сироп
-   let wt = (wc+ws) //всего вода
-   let t = (Vf+wt+s*1).toFixed(1) //всего на фруктах
-   let bragaPulp =(V+ws+s*1)-(V+ws+s*1)*0.03;
+   let wss =  (s*0.4)// вода на сироп
+   let ws = wss.toFixed(2)
+  
+   
+   let wt = (wc+wss) //всего вода
+   let t = (Vf+wt+s*1) //всего на фруктах
+   let bragaPulp =(V+wss+s*1)-(V+wss+s*1)*0.03;
    let bm = bragaPulp.toFixed(1)
+   console.log(bragaPulp);
   
    const wj = Vf+s*0.4
    
@@ -97,8 +107,15 @@ function formValidate() {
    let AsJ = (((bc*K/100)-(bc*K/100)*0.1)*100/40).toFixed(1); 
    //из каши
    let As =(((bm*K/100)-(bm*K/100)*0.1)*100/40).toFixed(1); 
-  
-   console.log(As, AsJ);
+
+   //расчет дробного введения сиропа
+   let is = s*1.4;
+   let ist = (is/3).toFixed(2);
+   let ists = (s/3).toFixed(2);
+   let istw = (ists*0.4).toFixed(2);
+
+   console.log(is);
+   
    
    setS (s);  
    setWS(ws)
@@ -110,6 +127,11 @@ function formValidate() {
    setWJ(wj);
    setB(bc);
    setAsJ(AsJ);
+
+   setIS(is); //инвертный сироп всего
+   setIst(ist);//инвертный на 1/3
+   setISts(ists);
+   setIStw(istw);
    
    
   }
@@ -123,7 +145,7 @@ function formValidate() {
        
         <h2 className='note__text'> -  eсли у вас есть определенный объем измельченных фруктов или сока и вы предполагаете полностью использовать их на приготовление дистиллята, тогда воспользуйтесь
           <a className='link-calc' href="#calc"> Калькулятором №1;</a> </h2>
-        <h2 className='note__text'> - eсли вы хотите рассчитать, какое количество вруктов вам необходимо для получения определенного объема готовой к перегонке браги (например по объему вашего самогонного аппарата), то воспользуйтесь 
+        <h2 className='note__text'> - eсли вы хотите рассчитать, какое количество фруктов вам необходимо для получения определенного объема готовой к перегонке браги (например по объему вашего самогонного аппарата), то воспользуйтесь 
           <a className='link-calc' href="#calc2">  Калькулятором №2</a></h2>
         <p className='note__text'> -  желаемая крепость браги зависит от спиртоустойчивости дрожжей;  <br></br> - количество сахара в фруктах измеряется с помощью приборов или берется по таблицам;
         </p>
@@ -187,7 +209,7 @@ function formValidate() {
               <a className='result-txt' href="#result">Результат смотри ниже &#10549;</a>
               </div>     
       </div>
-            {/* < CalcNote /> */}
+         
           </div>
           <div className="calc__wrapper">
           
@@ -203,16 +225,22 @@ function formValidate() {
                As = {As}
                AsJ = {AsJ}
                 />
-              {/* < CalcResultJuice
-              WJ = {WJ}
-              J =  {J}
-              QJ = {QJ}
-              S = {S}
-               /> */}
-              {/* < СalcResultNote
-              WS = {WS} /> */}
-          </div>   
+
+          </div> 
+         
         </div>
+        < CalcNote
+          Bm = {Bm}
+          B = {B}
+          As = {As}
+          AsJ = {AsJ}
+          S = {S}
+          Ws = {Ws}
+
+          IS = {IS}
+          ISt = {ISt}
+          ISts = {ISts}
+          IStw = {IStw} />  
        </div>
       </div>
       </>
