@@ -47,6 +47,9 @@
   font-weight: 600;
   text-align: center;
 }
+.detailed-title {
+  font-weight: 600;
+}
 @media (max-width: 961px) {
   .box-subtitle {   
     font-size: 20px;
@@ -81,7 +84,5 @@
     font-size: 14px;
     text-align: center;
   }
-  .detailed-title {
-    font-weight: 600;
-  }
+ 
 }

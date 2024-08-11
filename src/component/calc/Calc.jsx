@@ -32,6 +32,12 @@ function Calc(props) {
   const [As, setAs] = useState(0);
 
   
+  const [IS, setIS] = useState(0);
+  const [ISt, setIst] = useState(0);//сироп 1/3 всего
+  const [ISts, setISts] = useState(0);//сахар 1/3
+ const [IStw, setIStw] = useState(0);//вода 1/3
+
+  
 function formValidate() {
   let error = 0;
   if (!volume || !volume ) {
@@ -96,7 +102,11 @@ function formValidate() {
    //из каши
    let As =(((V*K/100)-(V*K/100)*0.1)*100/40).toFixed(1); 
 
-   console.log(As);
+     //расчет дробного введения сиропа
+     let is = s*1.4;
+     let ist = (is/3).toFixed(2);
+     let ists = (s/3).toFixed(2);
+     let istw = (ists*0.4).toFixed(2);
 
 
    setS (s);  
@@ -110,6 +120,11 @@ function formValidate() {
    
    setWS(ws);
     setAs(As);
+
+    setIS(is); //инвертный сироп всего
+    setIst(ist);//инвертный на 1/3
+    setISts(ists);
+    setIStw(istw);
   }
  
   return (
@@ -172,7 +187,7 @@ function formValidate() {
               <a className='result-txt' href="#result2">Результат смотри ниже &#10549;</a>
               </div>     
       </div>
-            {/* < CalcNote /> */}
+         
           </div>
           <div className="calc__wrapper">
           
@@ -188,12 +203,18 @@ function formValidate() {
               QJ = {QJ}
               S = {S}
                />
-              < СalcResultNote
-              WS = {WS}
-              As = {As} />
-               {/* <div className='p'>Подробно о том, как подготовить сырье, какие взять дрожжи, как определить сахаристость сырья читайте в моем авторском курсе "Фрутовый самогон. Вкусно, просто и недорого" и ТГ канале "Моя домашняя винокурня" </div> */}
+            
+              
                </div>
-          </div>   
+          </div> 
+          < СalcResultNote
+              WS = {WS}
+              As = {As}
+              S = {S}
+              IS = {IS}
+              ISt = {ISt}
+              ISts = {ISts}
+              IStw = {IStw} />  
         </div>
        </div>
       </div>

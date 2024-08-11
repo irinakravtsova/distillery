@@ -114,8 +114,6 @@ function formValidate() {
    let ists = (s/3).toFixed(2);
    let istw = (ists*0.4).toFixed(2);
 
-   console.log(is);
-   
    
    setS (s);  
    setWS(ws)
@@ -162,6 +160,7 @@ function formValidate() {
         <div className='calc__inner'>
           <div className="calc__wrapper">
              <div className='calc__box'>
+             <img className='bgimage' src={Bgr} alt="" />
                <h2 className='h2'>Введите исходные данные</h2>
                <form action=""
                className='form__wrapper'               

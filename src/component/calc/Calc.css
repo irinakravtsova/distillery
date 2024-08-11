@@ -24,12 +24,12 @@ line-height: normal;
   text-align: center;
 }
 .calc {
-position: relative;
+/* position: relative; */
 margin-bottom: 152px; 
 }
 .bgimage2 {
   position: absolute;
-  top: 247px;
+  top: 300px;
   width: 100%;
   z-index: -1;
   opacity: 0.2;
@@ -45,6 +45,7 @@ margin-bottom: 152px;
 }
 .calc__box {
   padding: 0 28px 28px 28px; 
+  position: relative; 
 }
 
 .calc__wrapper {

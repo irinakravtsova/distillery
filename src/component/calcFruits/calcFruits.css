@@ -43,7 +43,7 @@ margin-bottom: 60px;
 }
 .bgimage {
   position: absolute;
-  top: 236px;
+  top: 500px;
   width: 100%;
   z-index: -1;
   opacity: 0.2;
@@ -90,6 +90,7 @@ margin-bottom: 60px;
 }
 .results-note {
   margin-top: 0;
+  border-bottom: none;
 }
 .result {
   display: flex;
@@ -224,9 +225,10 @@ line-height: normal;
   }
   .results {
     margin-top: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 0px;
     gap: 8px;
     padding-bottom: 6px;
+    border-bottom: none;
   }
   .label_total {
     font-size: 16px;
