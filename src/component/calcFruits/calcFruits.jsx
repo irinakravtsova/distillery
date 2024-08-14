@@ -81,23 +81,35 @@ function formValidate() {
      return     
    }
 
-   let a = (K/0.6*10).toFixed(1); //приводим крепость к сахару   
-   let b = (Vf*0.3).toFixed(1)//мезга  
+   let a = (K/0.6*10); //приводим крепость к сахару
+  //  console.log(a);
+  //  let aa = (a/(1000-a))*1000
+  //  console.log(aa);
+  //  let cc =  C/2*10
+  //  console.log(cc);
+  //  let ss = aa-cc
+  //  console.log(ss);
+  //  let st = (ss/1000)*Vf*2 
+  //  console.log(st);
+  //  let s = st.toFixed(2)
+   
+   
+      
+   let b = (Vf*0.3)//мезга  
    let wc = Vf //вода на сок 
    let d = Vf-b //сок без мезги  
    let V = wc+d //вода+сок
-   let s = ((((a/(1000-a))*1000 - C/2*10)/1000*V).toFixed(1)); //сахара на весь объем
+   let s = (((((a/(1000-a))*1000 - C/2*10))/1000*Vf*2).toFixed(2)); //сахара на весь объем
    let wss =  (s*0.4)// вода на сироп
    let ws = wss.toFixed(2)
   
-   
-   let wt = (wc+wss) //всего вода
-   let t = (Vf+wt+s*1).toFixed(2) //всего на фруктах
+   let wtt = (wc+wss)
+   let wt =wtt.toFixed(2) //всего вода
+   let t = (Vf+wtt+s*1).toFixed(2) //всего на фруктах
   
    let bragaPulp =(V+wss+s*1)-(V+wss+s*1)*0.03;
-   let bm = bragaPulp.toFixed(1)
-   console.log(bragaPulp);
-  
+   let bm = bragaPulp.toFixed(2)
+ 
    const wj = Vf+s*0.4
    
    let braga = (Vf*2+s*1.4)-(Vf*2+s*1.4)*0.03;
