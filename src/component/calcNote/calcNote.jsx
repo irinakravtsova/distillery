@@ -19,7 +19,7 @@ function CalcNote(props) {
                  инвертный сироп всего:
               <span className='label_result'> {(props.S*1.4).toFixed(2)}  </span> л.  
                (в том числе:
-              <span className='label_result'>  {props.S} </span> кг. сахара,  {props.WS} л. воды).          
+              <span className='label_result'>  {props.S} </span> кг. сахара,  {props.Ws} л. воды).          
             </p>            
           </div>         
           
